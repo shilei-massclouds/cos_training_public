@@ -1,0 +1,20 @@
+[package]
+name = "libos"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+a0 = ["mmu-identity"]
+mmu_enable = ["mmu-alterable/enable"]
+mmu_disable = ["mmu-alterable/disable"]
+sv39 = ["mmu-scheme/sv39"]
+sv48 = ["mmu-scheme/sv48"]
+
+[dependencies]
+riscv = "0.10"
+sbi-rt = { version = "0.0.2", features = ["legacy"] }
+mmu-identity = { path = "../mmu_identity", optional = true }
+mmu-alterable = { path = "../mmu_alterable", optional = true }
+mmu-scheme = { path = "../mmu_scheme", optional = true }

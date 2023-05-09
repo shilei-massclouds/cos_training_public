@@ -1,0 +1,13 @@
+[package]
+name = "mmu-scheme"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+sv39 = []
+sv48 = []
+
+[dependencies]
+riscv = "0.10"
