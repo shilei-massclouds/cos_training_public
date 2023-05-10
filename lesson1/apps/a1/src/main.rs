@@ -14,6 +14,11 @@ fn main() {
 }
 
 fn verify_disable() {
+    unsafe {
+        let p: *const u32 = 0x22000000 as *const u32;
+        libos::println!("Access pflash: {:x} Okay!", *p);
+    }
+
     libos::println!("Result: disable mmu Okay!");
 }
 
